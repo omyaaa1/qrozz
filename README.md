@@ -5,9 +5,9 @@ Qrozz is a simple QR maker toolkit with two parts:
 - QR maker snippets in many languages inside `langs/`
 
 ## Live QR Maker Link
+- Demo: https://omyaaa1.github.io/qrozz/
 - QR API (direct image): https://api.qrserver.com/v1/create-qr-code/?data=hello
 - Web app (local): open `app/index.html`
-- GitHub Pages (after deploy): https://<your-username>.github.io/qrozz/
 
 ## How To Use (Web)
 1. Open `app/index.html` in a browser.

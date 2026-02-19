@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Qrozz QR Maker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="head">
+      <div class="title">Qrozz</div>
+      <div class="sub">Minimal QR maker</div>
+    </header>
+
+    <section class="panel">
+      <label class="label">Text / URL</label>
+      <input id="text" type="text" placeholder="https://example.com" />
+
+      <div class="row">
+        <div class="col">
+          <label class="label">Size</label>
+          <input id="size" type="number" min="100" max="800" value="240" />
+        </div>
+        <div class="col">
+          <label class="label">Margin</label>
+          <input id="margin" type="number" min="0" max="10" value="0" />
+        </div>
+      </div>
+
+      <div class="row">
+        <button id="gen" class="btn">Generate</button>
+        <button id="open" class="btn">Open QR Link</button>
+        <button id="copy" class="btn">Copy QR Link</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <img id="qr" alt="QR" />
+      <div id="link" class="link"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

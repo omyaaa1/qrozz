@@ -1,6 +1,3 @@
-// C
-#include <stdio.h>
-#include <string.h>
 
 int main() {
     const char *data = "https://example.com";

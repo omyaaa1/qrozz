@@ -1,4 +1,3 @@
-// Swift
 import Foundation
 
 let data = "https://example.com"

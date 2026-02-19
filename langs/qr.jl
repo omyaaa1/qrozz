@@ -1,4 +1,3 @@
-# Julia
 using URIs
 
 data = "https://example.com"

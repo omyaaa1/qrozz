@@ -1,5 +1,3 @@
-# Objective-C
-#import <Foundation/Foundation.h>
 int main() {
   @autoreleasepool {
     NSString *data = @"https://example.com";

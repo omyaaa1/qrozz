@@ -1,4 +1,3 @@
-# Groovy
 class QR {
   static void main(String[] args) {
     def data = "https://example.com"

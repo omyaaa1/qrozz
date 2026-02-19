@@ -1,4 +1,3 @@
-// Dart
 import 'dart:convert';
 
 void main() {

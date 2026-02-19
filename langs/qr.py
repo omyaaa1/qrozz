@@ -1,4 +1,3 @@
-# Python
 import urllib.parse
 
 data = "https://example.com"

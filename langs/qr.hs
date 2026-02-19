@@ -1,4 +1,3 @@
-# Haskell
 import Network.URI (escapeURIString, isUnreserved)
 
 main :: IO ()

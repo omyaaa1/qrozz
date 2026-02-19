@@ -1,4 +1,3 @@
-# Fortran
 program qr
   implicit none
   character(len=*), parameter :: data = "https://example.com"

@@ -1,4 +1,3 @@
-# Rust
 fn main() {
     let data = "https://example.com";
     let url = format!(

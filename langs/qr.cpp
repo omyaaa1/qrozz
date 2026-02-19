@@ -1,6 +1,3 @@
-// C++
-#include <iostream>
-#include <string>
 
 int main() {
     std::string data = "https://example.com";

@@ -1,4 +1,3 @@
-# Ruby
 require "cgi"
 
 data = "https://example.com"

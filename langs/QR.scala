@@ -1,4 +1,3 @@
-# Scala
 object QR {
   def main(args: Array[String]): Unit = {
     val data = "https://example.com"

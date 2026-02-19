@@ -1,3 +1,6 @@
-let data = "https://example.com" in
-let url = "https://api.qrserver.com/v1/create-qr-code/?data=" ^ data ^ "&size=240x240" in
-print_endline url
+(* deps: opam install qrcode *)
+let () =
+  let data = "https://example.com" in
+  let img = Qrcode.encode data in
+  Qrcode.save "qr.png" img;
+  print_endline "qr.png"

@@ -1,7 +1,7 @@
 const std = @import("std");
 
 pub fn main() !void {
-    const data = "https://example.com";
-    const url = "https://api.qrserver.com/v1/create-qr-code/?data=" ++ data ++ "&size=240x240";
-    try std.io.getStdOut().writer().print("{s}\n", .{url});
+  const cmd = "zint -b 58 -o qr.png -d https://example.com";
+  _ = try std.ChildProcess.exec(.{ .allocator = std.heap.page_allocator, .argv = &[_][]const u8{"cmd", "/C", cmd} });
+  try std.io.getStdOut().writer().print("qr.png\n", .{});
 }

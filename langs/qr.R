@@ -1,3 +1,7 @@
-data <- "https://example.com"
-url <- paste0("https://api.qrserver.com/v1/create-qr-code/?data=", URLencode(data), "&size=240x240")
-cat(url, "\n")
+# deps: install.packages("qrcode")
+library(qrcode)
+q <- qrcode_gen("https://example.com")
+png("qr.png")
+print(q)
+dev.off()
+cat("qr.png\n")

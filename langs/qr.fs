@@ -1,3 +1,11 @@
+// deps: QRCoder
+open System
+open System.IO
+open QRCoder
+
 let data = "https://example.com"
-let url = "https://api.qrserver.com/v1/create-qr-code/?data=" + data + "&size=240x240"
-printfn "%s" url
+use gen = new QRCodeGenerator()
+use qr = gen.CreateQrCode(data, QRCodeGenerator.ECCLevel.M)
+let png = new PngByteQRCode(qr)
+File.WriteAllBytes("qr.png", png.GetGraphic(10))
+printfn "qr.png"

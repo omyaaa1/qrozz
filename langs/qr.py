@@ -1,5 +1,7 @@
-import urllib.parse
+# deps: pip install qrcode[pil]
+import qrcode
 
 data = "https://example.com"
-url = f"https://api.qrserver.com/v1/create-qr-code/?data={urllib.parse.quote(data)}&size=240x240"
-print(url)
+img = qrcode.make(data)
+img.save("qr.png")
+print("qr.png")

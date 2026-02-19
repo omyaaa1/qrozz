@@ -1,5 +1,17 @@
+// deps: macos + coreimage
 import Foundation
+import CoreImage
+import CoreImage.CIFilterBuiltins
+import AppKit
 
-let data = "https://example.com"
-let url = "https://api.qrserver.com/v1/create-qr-code/?data=\(data)&size=240x240"
-print(url)
+let data = "https://example.com".data(using: .utf8)!
+let filter = CIFilter.qrCodeGenerator()
+filter.message = data
+let ciImage = filter.outputImage!
+let rep = NSCIImageRep(ciImage: ciImage)
+let nsImage = NSImage(size: rep.size)
+nsImage.addRepresentation(rep)
+let png = NSBitmapImageRep(data: nsImage.tiffRepresentation!)!
+let dataOut = png.representation(using: .png, properties: [:])!
+try dataOut.write(to: URL(fileURLWithPath: "qr.png"))
+print("qr.png")

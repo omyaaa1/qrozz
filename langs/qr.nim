@@ -1,3 +1,6 @@
-let data = "https://example.com"
-let url = "https://api.qrserver.com/v1/create-qr-code/?data=" & data & "&size=240x240"
-echo url
+# deps: nimble install qrcode
+import qrcode
+
+let img = qr"https://example.com"
+img.savePNG("qr.png")
+echo "qr.png"

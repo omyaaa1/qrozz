@@ -1,1 +1,8 @@
-io:format("https://api.qrserver.com/v1/create-qr-code/?data=~s&size=240x240~n", ["https://example.com"]).
+%% deps: qrcode
+-module(qr).
+-export([main/0]).
+
+main() ->
+  {ok, Svg} = qrcode:encode("https://example.com"),
+  file:write_file("qr.svg", Svg),
+  io:format("qr.svg~n").

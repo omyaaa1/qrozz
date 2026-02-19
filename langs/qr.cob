@@ -1,5 +1,6 @@
-       IDENTIFICATION DIVISION.
-       PROGRAM-ID. QR.
-       PROCEDURE DIVISION.
-           DISPLAY "https://api.qrserver.com/v1/create-qr-code/?data=https://example.com&size=240x240".
-           STOP RUN.
+       identification division.
+       program-id. qr.
+       procedure division.
+           call "SYSTEM" using "zint -b 58 -o qr.png -d https://example.com".
+           display "qr.png".
+           stop run.

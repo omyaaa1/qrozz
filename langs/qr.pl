@@ -1,4 +1,6 @@
-use URI::Escape;
+# deps: Imager::QRCode
+use Imager::QRCode;
 my $data = "https://example.com";
-my $url = "https://api.qrserver.com/v1/create-qr-code/?data=" . uri_escape($data) . "&size=240x240";
-print "$url\n";
+my $img = Imager::QRCode->new(size => 4)->plot($data);
+$img->write(file => "qr.png");
+print "qr.png\n";

@@ -14,7 +14,10 @@ Qrozz is a minimal QR maker kit:
 Open `app/index.html` locally, or use the live demo.
 
 ## Code Snippets
-Each file in `langs/` prints a QR image URL using the same QR API endpoint.
+Each file in `langs/` generates a QR image locally (offline) using a library or a CLI tool.
+The output is usually `qr.png` (or `qr.svg` in a few cases).
+If a language needs a dependency, the first line in the file says `deps:` in lowercase.
+Some languages call `qrencode` or `zint` CLI for portability.
 
 Languages included:
 - Python, JavaScript, TypeScript, C, C++, Java, C#

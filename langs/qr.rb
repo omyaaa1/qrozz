@@ -1,5 +1,8 @@
-require "cgi"
+# deps: gem install rqrcode chunky_png
+require "rqrcode"
+require "chunky_png"
 
-data = "https://example.com"
-url = "https://api.qrserver.com/v1/create-qr-code/?data=#{CGI.escape(data)}&size=240x240"
-puts url
+qr = RQRCode::QRCode.new("https://example.com")
+img = qr.as_png(size: 240)
+IO.binwrite("qr.png", img.to_s)
+puts "qr.png"

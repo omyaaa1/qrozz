@@ -1,3 +1,8 @@
-const data = "https://example.com";
-const url = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(data)}&size=240x240`;
-console.log(url);
+// deps: npm i qrcode
+const QRCode = require('qrcode');
+
+const data = 'https://example.com';
+QRCode.toFile('qr.png', data, { width: 240 }, err => {
+  if (err) throw err;
+  console.log('qr.png');
+});

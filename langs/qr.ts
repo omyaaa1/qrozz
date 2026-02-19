@@ -1,3 +1,7 @@
-const data: string = "https://example.com";
-const url: string = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(data)}&size=240x240`;
-console.log(url);
+// deps: npm i qrcode
+import QRCode from 'qrcode';
+
+const data = 'https://example.com';
+QRCode.toFile('qr.png', data, { width: 240 }).then(() => {
+  console.log('qr.png');
+});

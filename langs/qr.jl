@@ -1,5 +1,6 @@
-using URIs
+# deps: import Pkg; Pkg.add("QRCode")
+using QRCode
 
-data = "https://example.com"
-url = "https://api.qrserver.com/v1/create-qr-code/?data=$(escapeuri(data))&size=240x240"
-println(url)
+img = qrcode("https://example.com")
+save("qr.png", img)
+println("qr.png")

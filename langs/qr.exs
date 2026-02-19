@@ -1,2 +1,4 @@
-url = "https://api.qrserver.com/v1/create-qr-code/?data=" <> URI.encode("https://example.com") <> "&size=240x240"
-IO.puts(url)
+# deps: mix add qr_code
+{:ok, svg} = QRCode.create("https://example.com") |> QRCode.render()
+File.write!("qr.svg", svg)
+IO.puts("qr.svg")

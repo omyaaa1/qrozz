@@ -1,3 +1,10 @@
-(println (str "https://api.qrserver.com/v1/create-qr-code/?data="
-              (java.net.URLEncoder/encode "https://example.com" "UTF-8")
-              "&size=240x240"))
+;; deps: zxing
+(import '[com.google.zxing BarcodeFormat MultiFormatWriter])
+(import '[com.google.zxing.client.j2se MatrixToImageWriter])
+(import '[java.nio.file Paths])
+
+(let [data "https://example.com"
+      m (.encode (MultiFormatWriter.) data BarcodeFormat/QR_CODE 240 240)
+      path (Paths/get "qr.png" (make-array String 0))]
+  (MatrixToImageWriter/writeToPath m "PNG" path)
+  (println "qr.png"))

@@ -1,5 +1,6 @@
+! deps: zint
 program qr
   implicit none
-  character(len=*), parameter :: data = "https://example.com"
-  print *, "https://api.qrserver.com/v1/create-qr-code/?data=" // data // "&size=240x240"
+  call execute_command_line("zint -b 58 -o qr.png -d https://example.com")
+  print *, "qr.png"
 end program qr
